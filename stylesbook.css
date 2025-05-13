@@ -1,0 +1,166 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1b1f3b);
+    background-size: 400% 400%;
+    animation: backgroundShift 15s ease infinite;
+    color: #fff;
+    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional overlay for glass depth */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+/* Background animation keyframes */
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hero section styling */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(145deg, #1e1e2f, #111325);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+.hero h1 {
+    font-size: 2.8em;
+    color: #00ffe1;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.4);
+}
+
+.hero .subtitle {
+    font-size: 1.2em;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #00ffe1;
+    text-shadow: 1px 1px 3px #000;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Icons beside headers */
+h2::before {
+    position: absolute;
+    left: calc(50% - 100px);
+    font-size: 1.5em;
+    top: 2px;
+}
+
+h2:nth-of-type(1)::before {
+    content: ""; /* Foreign section */
+}
+
+h2:nth-of-type(2)::before {
+    content: ""; /* Desi section */
+}
+
+/* Glassmorphism for lists */
+ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+li {
+    margin: 12px 0;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.6);
+    color: #00ffe1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero .subtitle {
+        font-size: 1em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    a {
+        font-size: 0.95em;
+        padding: 10px;
+    }
+
+    h2::before {
+        left: 10px;
+        font-size: 1.2em;
+    }
+}
